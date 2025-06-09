@@ -4,9 +4,9 @@ import abi from "./abi/DonationMultiCampaign.json";
 import QRCode from "qrcode.react";
 import "./style.css";
 
-// === ATUR INI SESUAI ALAMAT KONTRAKMU ===
-const contractAddress = "0xa53f0E3cb92f6b9149c38Dbe13AABdb65D9281c2"; 
-const ETHERSCAN_PREFIX = "https://sepolia.etherscan.io"; // ganti jika pakai testnet lain
+// === GANTI INI DENGAN ALAMAT KONTRAKMU ===
+const contractAddress = "0xa53f0E3cb92f6b9149c38Dbe13AABdb65D9281c2";
+const ETHERSCAN_PREFIX = "https://sepolia.etherscan.io"; // Ganti jika pakai testnet/mainnet lain
 
 function shorten(addr) {
   return addr.slice(0, 6) + "..." + addr.slice(-4);
@@ -30,7 +30,7 @@ export default function DonateApp() {
   const [topDonors, setTopDonors] = useState([]);
   const [myIsOwner, setMyIsOwner] = useState(false);
   const [adminMode, setAdminMode] = useState(false);
-  const [withdrawVal, setWithdrawVal] = useState(""); // in ETH
+  const [withdrawVal, setWithdrawVal] = useState("");
 
   // Kurs ETH/IDR
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function DonateApp() {
       const count = Number(await cont.getDonationsCount());
       let temp = [];
       let total = 0;
-      let donorSum = {}; // {addr: totalInSelectedCampaign}
+      let donorSum = {};
       for (let i = count - 1; i >= 0; i--) {
         const [donor, amount, timestamp, msg, campaignId] = await cont.getDonation(i);
         if (Number(campaignId) !== Number(selectedCampaign)) continue;
