@@ -1,4 +1,4 @@
-# Web Donasi Transparan Blockchain
+# Web Donasi Transparan Blockchain (ETH ⇄ IDR Otomatis)
 
 ## Struktur
 
@@ -6,19 +6,23 @@
 - `frontend/` — React app
 - `frontend/src/abi/Donation.json` — ABI hasil compile contract
 
-## Cara Kerja
+## Cara Deploy
 
-1. Deploy smart contract ke testnet (Sepolia, Polygon, dll).
-2. Salin ABI dan alamat kontrak ke `frontend/src/abi/Donation.json` dan `DonateApp.js`.
-3. Jalankan React app:  
-   ```
-   cd frontend
-   npm install
-   npm start
-   ```
-4. Connect Metamask ke jaringan yang sama.
+### 1. Deploy Smart Contract
+- Buka [Remix](https://remix.ethereum.org)
+- Paste `Donation.sol`, compile, deploy ke testnet (Sepolia, Goerli, dll) via Metamask.
+- Copy **address** kontrak ke `frontend/src/DonateApp.js` (`contractAddress`)
+- Copy **ABI** ke `frontend/src/abi/Donation.json`
 
-## Fitur
+### 2. Jalankan React App
+```bash
+cd frontend
+npm install
+npm start
+```
+Buka di browser: [http://localhost:3000](http://localhost:3000)
 
-- Donasi transparan, tercatat di blockchain
-- Riwayat donasi real-time
+### 3. Fitur
+- Input donasi dalam IDR, konversi otomatis ke ETH (kurs CoinGecko).
+- Semua donasi tercatat transparan on-chain, riwayat tampil real-time.
+- User cukup konek Metamask ke jaringan yang sama.
