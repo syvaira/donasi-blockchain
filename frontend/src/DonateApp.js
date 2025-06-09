@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import abi from "./abi/DonationMultiCampaign.json";
-import QRCode from "qrcode.react";
+import { QRCodeCanvas } from "qrcode.react";
 import "./style.css";
 
 // === GANTI INI DENGAN ALAMAT KONTRAKMU ===
@@ -297,7 +297,7 @@ export default function DonateApp() {
           <b>Atau scan QR untuk donasi manual:</b>
         </div>
         <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:18}}>
-          <QRCode value={qrData} size={70} />
+          <QRCodeCanvas value={qrData} size={70} />
           <span style={{fontSize:13,color:"#666"}}>Alamat kontrak:<br/>
             <span style={{fontFamily:"monospace",fontSize:12}}>{shorten(contractAddress)}</span>
           </span>
