@@ -3,7 +3,6 @@ pragma solidity ^0.8.0;
 
 contract Donation {
     address public owner;
-
     event Donated(address indexed donor, uint amount, uint timestamp);
 
     struct DonationData {
