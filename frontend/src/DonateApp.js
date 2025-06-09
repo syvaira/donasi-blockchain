@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import abi from "./abi/DonationMultiCampaign.json";
-import { QRCode } from "qrcode.react";
+import QRCode from "qrcode.react";
 import "./style.css";
 
 // === GANTI INI DENGAN ALAMAT KONTRAKMU ===
