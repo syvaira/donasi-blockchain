@@ -5,7 +5,7 @@ import QRCode from "qrcode.react";
 import "./style.css";
 
 // === GANTI INI DENGAN ALAMAT KONTRAKMU ===
-const contractAddress = "0xa53f0E3cb92f6b9149c38Dbe13AABdb65D9281c2";
+const contractAddress = "0xC06d351642093f503a17e1648752a4fd1c25300c";
 const ETHERSCAN_PREFIX = "https://sepolia.etherscan.io"; // Ganti jika pakai testnet/mainnet lain
 
 function shorten(addr) {
