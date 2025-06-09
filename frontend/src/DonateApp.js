@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import abi from "./abi/Donation.json";
 
 // Ganti dengan alamat kontrak hasil deploy!
-const contractAddress = "YOUR_CONTRACT_ADDRESS_HERE";
+const contractAddress = "0xa53f0E3cb92f6b9149c38Dbe13AABdb65D9281c2";
 
 function DonateApp() {
   const [donations, setDonations] = useState([]);
